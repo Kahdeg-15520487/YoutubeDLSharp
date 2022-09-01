@@ -23,17 +23,18 @@
             <TextBox x:Name="txtUrl" Margin="0,12" FontSize="14"/>
             <Grid Grid.Row="1">
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="2*"/>
-                    <ColumnDefinition/>
-                    <ColumnDefinition/>
+                    <ColumnDefinition Width="95*"/>
+                    <ColumnDefinition Width="52*"/>
+                    <ColumnDefinition Width="49*"/>
                 </Grid.ColumnDefinitions>
-                <CheckBox VerticalAlignment="Center" HorizontalAlignment="Center"
+                <CheckBox VerticalAlignment="Center" HorizontalAlignment="Left"
                           Content="Audio Only"
-                          IsChecked="{Binding AudioOnly}"/>
-                <Button Grid.Column="1" IsEnabled="{Binding IsNotDownloading, Mode=OneWay}"
-                        Content="Download" Click="DownloadButton_Click"/>
+                          IsChecked="{Binding AudioOnly}" Height="16" Width="79"/>
+                <Button IsEnabled="{Binding IsNotDownloading, Mode=OneWay}" Click="DownloadLocationButton_Click" Content="Download Folder" Grid.Column="1"/>
                 <Button Grid.Column="2" IsEnabled="{Binding IsNotDownloading, Mode=OneWay}"
                         Content="Information" Click="InformationButton_Click"/>
+                <Button IsEnabled="{Binding IsNotDownloading, Mode=OneWay}"
+                        Content="Download" Click="DownloadButton_Click" Margin="93,0,0,0"/>
             </Grid>
             <Expander Grid.Row="2" Header="Custom Arguments">
                 <TextBox x:Name="txtOptions" AcceptsReturn="True" VerticalScrollBarVisibility="Auto" Height="60"/>
